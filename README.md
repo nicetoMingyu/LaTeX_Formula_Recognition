@@ -35,7 +35,10 @@ After downloading:
 1. Unzip the file
 2. For macOS users: 
    - Move `FormulaPro.app` to your Applications folder
-   - If you see a security warning, go to System Settings > Privacy & Security and click "Open Anyway"
+   - Right-click (or Control-click) on FormulaPro.app and select "Open"
+   - If you see a security warning, click "Open" in the dialog
+   - If the app still won't open, go to System Settings > Privacy & Security and click "Open Anyway"
+   - You might need to enter your administrator password on first launch
 3. Launch the application
 4. Enter your Qwen API key when prompted
 
