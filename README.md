@@ -24,15 +24,18 @@ A powerful desktop application for recognizing and converting mathematical formu
 
 ### Download Pre-built Application
 
-You can download the pre-built application for direct use:
+You can download the latest version of FormulaPro from our [GitHub Releases](https://github.com/nicetoMingyu/LaTeX_Formula_Recognition/releases/latest) page.
 
-- For macOS: [FormulaPro.app](releases/FormulaPro.app.zip)
-- For Windows: Coming soon
-- For Linux: Coming soon
+Available versions:
+- macOS: `FormulaPro.zip`
+- Windows: Coming soon
+- Linux: Coming soon
 
 After downloading:
 1. Unzip the file
-2. For macOS users: Move `FormulaPro.app` to your Applications folder
+2. For macOS users: 
+   - Move `FormulaPro.app` to your Applications folder
+   - If you see a security warning, go to System Settings > Privacy & Security and click "Open Anyway"
 3. Launch the application
 4. Enter your Qwen API key when prompted
 
