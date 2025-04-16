@@ -20,12 +20,25 @@ A powerful desktop application for recognizing and converting mathematical formu
 ### Export Options
 ![Export Options](assets/screenshots/export_options.png)
 
-## Requirements
+## Quick Start (For Users)
 
-- Python 3.8 or higher
-- Qwen API key
+### Download Pre-built Application
 
-## Installation
+You can download the pre-built application for direct use:
+
+- For macOS: [FormulaPro.app](releases/FormulaPro.app.zip)
+- For Windows: Coming soon
+- For Linux: Coming soon
+
+After downloading:
+1. Unzip the file
+2. For macOS users: Move `FormulaPro.app` to your Applications folder
+3. Launch the application
+4. Enter your Qwen API key when prompted
+
+## Installation (For Developers)
+
+If you want to run from source code or contribute to the project:
 
 1. Clone the repository:
 ```bash
@@ -48,7 +61,7 @@ pip install -r requirements.txt
 
 1. Create a `.env` file in the project root:
 ```
-OPENAI_API_KEY=your_api_key_here
+Qwen_API_KEY=your_api_key_here
 ```
 
 2. The application will securely store your API key using the system keyring.
