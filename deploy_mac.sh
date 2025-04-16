@@ -54,13 +54,34 @@ MATPLOTLIB_DATA=$(python -c "import matplotlib; print(matplotlib.get_data_path()
 mkdir -p dist/FormulaPro.app/Contents/Resources/matplotlib/mpl-data
 cp -R "${MATPLOTLIB_DATA}"/* dist/FormulaPro.app/Contents/Resources/matplotlib/mpl-data
 
-# 修复权限
-find dist/${PROJECT}.app -type f -exec chmod 644 {} \;
-find dist/${PROJECT}.app -type d -exec chmod 755 {} \;
-chmod +x dist/${PROJECT}.app/Contents/MacOS/${PROJECT}
+# 更全面的权限和属性处理
+echo "Setting up permissions and attributes..."
+cd dist
 
-# 解除安全限制
-xattr -cr dist/${PROJECT}.app
+# 设置基本权限
+chmod -R 755 ${PROJECT}.app
+find ${PROJECT}.app -type f -exec chmod 644 {} \;
+find ${PROJECT}.app -type d -exec chmod 755 {} \;
+chmod +x ${PROJECT}.app/Contents/MacOS/${PROJECT}
 
-echo "Build successful: dist/${PROJECT}.app"
+# 移除所有扩展属性
+xattr -cr ${PROJECT}.app
+
+# 预先移除隔离属性
+xattr -d com.apple.quarantine ${PROJECT}.app 2>/dev/null || true
+
+# 设置应用程序包权限
+chmod 755 ${PROJECT}.app/Contents/MacOS/*
+chmod 644 ${PROJECT}.app/Contents/Info.plist
+chmod -R 755 ${PROJECT}.app/Contents/Resources/
+
+# 使用 codesign 重新签名（如果可用）
+if command -v codesign &> /dev/null; then
+    codesign --force --deep --sign - ${PROJECT}.app
+fi
+
+# 打包应用（保留所有属性和权限）
+ditto -c -k --keepParent --sequesterRsrc --rsrc ${PROJECT}.app ${PROJECT}.zip
+
+echo "Build successful: ${PROJECT}.app has been packaged as ${PROJECT}.zip"
 

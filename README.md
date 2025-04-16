@@ -31,16 +31,21 @@ Available versions:
 - Windows: Coming soon
 - Linux: Coming soon
 
-After downloading:
-1. Unzip the file
-2. For macOS users: 
-   - Move `FormulaPro.app` to your Applications folder
-   - Right-click (or Control-click) on FormulaPro.app and select "Open"
-   - If you see a security warning, click "Open" in the dialog
-   - If the app still won't open, go to System Settings > Privacy & Security and click "Open Anyway"
-   - You might need to enter your administrator password on first launch
-3. Launch the application
-4. Enter your Qwen API key when prompted
+### Installation (macOS)
+
+1. Download `FormulaPro.zip` from the [latest release](https://github.com/nicetoMingyu/LaTeX_Formula_Recognition/releases/latest)
+2. Unzip the file
+3. When you try to open the app and see the security warning:
+   - Click "Cancel" on the warning dialog
+   - Go to System Settings > Privacy & Security
+   - Scroll down to the "Security" section
+   - You should see a message about FormulaPro being blocked
+   - Click "Open Anyway"
+   - In the new dialog that appears, click "Open"
+4. The app will now open and remember your choice
+5. Enter your Qwen API key when prompted
+
+Note: The security warning appears because the app is not signed with an Apple Developer ID. This is normal for open-source applications distributed outside the Mac App Store. The app is completely safe to use, and you can verify this by checking our source code.
 
 ## Installation (For Developers)
 
