@@ -1,0 +1,71 @@
+QMainWindow {
+    background-color: #F5F5F5;
+    font-family: "Helvetica Neue";
+}
+
+QPushButton {
+    background-color: #007AFF;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    min-width: 100px;
+}
+
+QPushButton:hover {
+    background-color: #0063CC;
+}
+
+QTextEdit {
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: "Menlo";
+    font-size: 13px;
+}
+
+QLabel#preview {
+    border: 1px solid #D1D1D1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+QProgressBar {
+    height: 20px;
+    border-radius: 4px;
+}
+
+QProgressBar::chunk {
+    background-color: #34C759;
+    border-radius: 4px;
+}
+
+QPushButton[text="Screen Capture (Ctrl+Shift+S)"] {
+    background-color: #34C759;
+}
+QPushButton[text="Screen Capture (Ctrl+Shift+S)"]:hover {
+    background-color: #248A3D;
+}
+
+QMainWindow#screenshot_overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+QLabel#screenshot_hint {
+    color: white;
+    font-size: 24px;
+    qproperty-alignment: AlignCenter;
+}
+
+/* 截图窗口样式 */
+#screenshot_overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#screenshot_hint {
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-bottom: 2px solid #007AFF;
+}
