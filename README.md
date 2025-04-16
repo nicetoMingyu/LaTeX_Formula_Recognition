@@ -68,6 +68,48 @@ source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. Run the application:
+```bash
+python src/main.py
+```
+
+## Building from Source
+
+### macOS
+
+To build the application on macOS:
+
+1. Make sure you have all dependencies installed:
+```bash
+pip install -r requirements.txt
+pip install pyinstaller
+```
+
+2. Make the deployment script executable:
+```bash
+chmod +x deploy_mac.sh
+```
+
+3. Run the deployment script:
+```bash
+./deploy_mac.sh
+```
+
+The script will:
+- Create a clean virtual environment
+- Install all required dependencies
+- Package the application with PyInstaller
+- Set up all necessary permissions and attributes
+- Create `FormulaPro.zip` in the `dist` directory
+
+The packaged application will be available at:
+- `dist/FormulaPro.app` (unzipped application)
+- `dist/FormulaPro.zip` (zipped application for distribution)
+
+### Windows & Linux
+
+Support for Windows and Linux coming soon.
+
 ## Configuration
 
 1. Create a `.env` file in the project root:
